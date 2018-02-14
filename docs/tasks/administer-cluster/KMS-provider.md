@@ -33,7 +33,7 @@ To configure a KMS provider on the API server, include a provider of type kms in
   * `endpoint`: Listen address of the gRPC server (KMS plugin). The endpoint is a UNIX domain socket connection.
   * `cachesize`: Number of data encryption keys (DEKs) to be cached in the clear. DEKs are used in Envelope encryption. 
 
-See Understanding the encryption at rest configuration. [TBD, https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#understanding-the-encryption-at-rest-configuration]
+See [Understanding the encryption at rest configuration.](docs/tasks/administer-cluster/encrypt-data)
 
 ## Implementing a KMS plugin
 
@@ -45,12 +45,9 @@ Refer to your cloud provider for instructions on enabling the cloud provider-spe
 ### Developing a KMS plugin gRPC server
 You can develop a KMS plugin gRPC server using a stub file available for Go. For other languages, you use a proto file to create a stub file that you can use to develop the gRPC server code.
 
-* Using Go: Use the functions and data structures in the following stub file to develop the gRPC server code
-[TBD] https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/envelope/v1beta1/service.pb.go
+* Using Go: Use the functions and data structures in the stub file: [service.pb.go](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/envelope/v1beta1/service.pb.go) to develop the gRPC server code 
 
-* Using languages other than Go: Use the protoc compiler with the following proto file to generate a stub file for the specific language
-[TBD]
-https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/envelope/v1beta1/service.proto
+* Using languages other than Go: Use the protoc compiler with the proto file: [service.proto](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/envelope/v1beta1/service.proto) to generate a stub file for the specific language
 
 Then use the functions and data structures in the stub file to develop the server code.
 
