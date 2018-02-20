@@ -83,9 +83,9 @@ resources:
     - secrets
     providers:
     - kms:
-      name: <display name of the KMS plugin>
-      endpoint: <UNIX domain socket listen address of the gRPC server (KMS plugin)>
-      cachesize: <number of data encryption keys (DEKs) to be cached in the clear>
+        name: <display name of the KMS plugin>
+        endpoint: <UNIX domain socket listen address of the gRPC server (KMS plugin)>
+        cachesize: <number of data encryption keys (DEKs) to be cached in the clear>
    - identity: {}
    ```
 2. Set the `--experimental-encryption-provider-config` flag on the kube-apiserver to point to the location of the configuration file.
@@ -131,9 +131,9 @@ resources:
     - secrets
     providers:
     - kms:
-       name : <display name of the KMS plugin>
-       endpoint: <UNIX domain socket listen address of the gRPC server (KMS plugin)>
-       cachesize: <number of data encryption keys (DEKs) to be cached in the clear>
+        name : <display name of the KMS plugin>
+        endpoint: <UNIX domain socket listen address of the gRPC server (KMS plugin)>
+        cachesize: <number of data encryption keys (DEKs) to be cached in the clear>
     - aescbc:
          keys:
          - name: key1
@@ -158,9 +158,9 @@ resources:
     providers:
     - identity: {}
     - kms:
-      name : <display name for the KMS plugin>
-      endpoint: <unix domain socket listen address of the gRPC server (KMS plugin)>
-      cachesize: <number of data encryption keys (DEKs) to be cached in clear>
+        name : <display name for the KMS plugin>
+        endpoint: <unix domain socket listen address of the gRPC server (KMS plugin)>
+        cachesize: <number of data encryption keys (DEKs) to be cached in clear>
 ```
 2.  Restart all kube-apiserver processes. 
 3. Run the following command to force all secrets to be decrypted.
