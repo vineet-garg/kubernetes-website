@@ -23,7 +23,7 @@ This page shows how to configure a Key Management Service (KMS) provider and plu
 
 The KMS encryption provider uses an envelope encryption scheme to encrypt data in etcd. The Key encryption keys (KEKs) are 
 stored and managed in a remote KMS. The KMS provider uses gRPC to communicate with a specific KMS 
-plugin. The KMS plugin, which is implemented as a gRPC server and deployed on the same host as the Kubernetes master, is responsible for all communication with the remote KMS.
+plugin. The KMS plugin, which is implemented as a gRPC server and deployed on the same host(s) as the Kubernetes master(s), is responsible for all communication with the remote KMS.
 
 ## Configuring the KMS provider
 
@@ -70,7 +70,7 @@ All configuration data, including authentication credentials the KMS plugin uses
 are stored and managed by the KMS plugin independently. The KMS plugin can encode the ciphertext with additional metada that may be required before sending it to the KMS for decryption.
 
 ### Deploying the KMS plugin 
-Ensure that the KMS plugin runs on the same host as the Kubernetes master. Cluster administrators can use various options, such as taints and tolerations, to deploy the KMS plugin on the master host.
+Ensure that the KMS plugin runs on the same host(s) as the Kubernetes master(s).
 
 ## Encrypting your data with the KMS provider
 To encrypt the data:
