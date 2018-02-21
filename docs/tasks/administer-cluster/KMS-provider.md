@@ -11,7 +11,7 @@ This page shows how to configure a Key Management Service (KMS) provider and plu
 
 * {% include task-tutorial-prereqs.md %}
 
-* Kubernetes version 1.7.0 or later is required
+* Kubernetes version 1.10.0 or later is required
 
 * etcd v3 or later is required
 
@@ -67,7 +67,7 @@ The gRPC server should listen at UNIX domain socket
 ### Integrating a KMS plugin with the remote KMS
 The KMS plugin can communicate with the remote KMS using any protocol supported by the KMS.
 All configuration data, including authentication credentials the KMS plugin uses to communicate with the remote KMS, 
-are stored and managed by the KMS plugin independently. The KMS plugin can encode the ciphertext with additional metada that may be required before sending it to the KMS for decryption.
+are stored and managed by the KMS plugin independently. The KMS plugin can encode the ciphertext with additional metadata that may be required before sending it to the KMS for decryption.
 
 ### Deploying the KMS plugin 
 Ensure that the KMS plugin runs on the same host(s) as the Kubernetes master(s).
